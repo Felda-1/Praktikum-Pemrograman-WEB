@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>💎 FINBISKU - Literasi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <!-- NAVBAR (ASLI, TIDAK DIUBAH) -->
+    <nav class="bg-orange-500 text-white px-6 py-4 flex items-center justify-between shadow-lg">
+        <div class="font-semibold text-lg">💎 FINBISKU</div>
+        <button onclick="toggleMenu()" class="md:hidden">☰</button>
+        <div id="navMenu" class="hidden md:flex gap-2">
+            <a href="index.html" class="nav">Beranda</a>
+            <a href="dashboard.html" class="nav">Dashboard</a>
+            <a href=".html" class="nav">Keuangan</a>
+            <a href="cashflow.html" class="nav">Cashflow</a>
+            <a href="smart-pricing.html" class="nav">Smart Pricing</a>
+            <a href="analisis.html" class="nav">Analisis</a>
+            <a href="literasi.html" class="nav">Literasi</a>
+            <a href="blog.html" class="nav">Blog</a>
+            <a href="profile.html" class="nav">Profil</a>
+        </div>
+    </nav>
+
+    <!-- SCRIPT NAV (ASLI, TIDAK DIUBAH) -->
+    <script>
+        const links = document.querySelectorAll('.nav');
+        links.forEach(l => {
+            if (l.href.includes(location.pathname.split('/').pop())) {
+                l.classList.add('bg-orange-400', 'rounded-lg', 'px-4', 'py-2');
+            } else {
+                l.classList.add('px-4', 'py-2', 'rounded-lg', 'hover:bg-orange-400');
+            }
+        });
+
+        function toggleMenu() {
+            navMenu.classList.toggle('hidden');
+        }
+    </script>
+
+    <div class="page-wrapper">
+
+        <!-- HERO -->
+        <div class="hero">
+            <video autoplay loop muted playsinline disablePictureInPicture class="background-video">
+                <source src="VidLiterasi.mp4" type="video/mp4">
+                Browser Anda tidak mendukung video tag.
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>
+                    Pahami Keuangan Usaha,<br> Ambil Keputusan Lebih Tepat!
+                </h1>
+                <p>
+                    Pelajari cara mengelola keuangan pribadi Anda dengan tips dan artikel terbaru kami.
+                </p>
+            </div>
+        </div>
+
+        <!-- SEARCH -->
+        <div class="container">
+            <div class="search-box">
+                <span class="icon absolute inset-y-0 left-3 flex items-center pl-3 pointer-events-none">
+                    <svg class="absolute h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" 
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" 
+                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                </span>
+                <input type="text" placeholder="Cari Istilah">
+            </div>
+
+            <div class="glossary-wrapper">
+                <details open>
+                    <summary>Arus Kas</summary>
+                    <div class="content">
+                        <p>
+                            Arus kas adalah pergerakan uang yang masuk dan keluar dari suatu usaha dalam periode tertentu. Arus kas yang sehat menunjukkan bahwa usaha mampu membiayai operasional dan kewajibannya tanpa kesulitan.
+                        </p>
+                    </div>
+                </details>
+
+                <details open>
+                    <summary>Laba Bersih</summary>
+                    <div class="content">
+                        <p>
+                            Laba bersih merupakan selisih antara total pendapatan dan seluruh biaya yang dikeluarkan, termasuk biaya operasional dan pajak. Nilai ini menunjukkan keuntungan nyata yang diperoleh usaha.
+                        </p>
+                    </div>
+                </details>
+
+                <details open>
+                    <summary>Biaya Operasional</summary>
+                    <div class="content">
+                        <p>
+                            Biaya operasional adalah pengeluaran rutin yang diperlukan agar usaha tetap berjalan, seperti biaya listrik, sewa tempat, gaji karyawan, dan biaya pemasaran.
+                        </p>
+                    </div>
+                </details>
+
+                <details open>
+                    <summary>Beban Tetap</summary>
+                    <div class="content">
+                        <p>
+                            Beban tetap adalah biaya yang tidak berubah meskipun volume produksi atau penjualan berubah, seperti sewa tempat, gaji karyawan tetap, dan asuransi.
+                        </p>
+                    </div>
+                </details>
+
+                <details open>
+                    <summary>Break Even Point (BEP)</summary>
+                    <div class="content">
+                        <p>
+                            Break Even Point adalah titik impas di mana total pendapatan sama dengan total biaya, sehingga usaha tidak mengalami untung maupun rugi.
+                        </p>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+
+        <!-- TITLE -->
+        <p class="section-title">Artikel Terbaru</p>
+
+        <!-- ARTICLE GRID -->
+        <div class="article-grid">
+
+            <div class="article-card">
+                <img src="Gambar5.jpeg" alt="artikel 1">
+                <h2>Peran Strategis UMKM dalam Pertumbuhan Ekonomi</h2>
+                <p>UMKM menjadi penggerak utama ekonomi Indonesia dan berperan besar dalam menciptakan lapangan kerja serta pertumbuhan usaha.</p>
+                <a href="https://finance.detik.com/berita-ekonomi-bisnis/d-8058527/peran-strategis-umkm-dari-pertumbuhan-ekonomi-8-hingga-pengentasan-kemiskinan">Baca Selengkapnya</a>
+            </div>
+
+            <div class="article-card">
+                <img src="Gambar2.jpeg" alt="artikel 2">
+                <h2>Manajemen Keuangan UMKM</h2>
+                <p>Pengelolaan keuangan yang tepat membantu UMKM menjaga stabilitas usaha dan merencanakan pertumbuhan secara lebih terarah.</p>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+
+            <div class="article-card">
+                <img src="Gambar8.jpeg" alt="artikel 3">
+                <h2>Menabung Untuk Masa Depan</h2>
+                <p>Menabung membantu pelaku UMKM mempersiapkan dana cadangan dan mewujudkan rencana usaha jangka panjang.</p>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+
+            <div class="article-card">
+                <img src="Gambar1.jpeg" alt="artikel 4">
+                <h2>Pembukuan Sederhana Untuk UMKM</h2>
+                <p>Tips dan strategi pencatatan keuangan yang memudahkan UMKM mengetahui kondisi usaha dan memantau keuntungan.</p>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+
+            <div class="article-card">
+                <img src="Gambar6.jpeg" alt="artikel 5">
+                <h2>Pengambilan Keputusan Usaha</h2>
+                <p>Data keuangan yang baik membantu UMKM mengambil keputusan usaha dengan lebih tepat dan percaya diri.</p>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+
+            <div class="article-card">
+                <img src="Gambar3.jpeg" alt="artikel 6">
+                <h2>Digitalisasi Keuangan UMKM</h2>
+                <p>Pemanfaatan teknologi keuangan membantu UMKM bekerja lebih efisien, transparan, dan siap bersaing.</p>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

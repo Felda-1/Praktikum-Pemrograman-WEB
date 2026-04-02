@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="signup-header">
+            <h1 class="signup-title">Selamat Datang Di FINBISKU !</h1>
+            <p class="signup-description">
+                Kelola pemasukan, pengeluaran, dan laporan keuangan usahamu dalam satu platform.
+            </p>
+
+            <div class="section-signup">
+                <h2 class="title">Masuk Akun</h2>
+
+                <form action="proses_login.php" method="POST">
+
+                    <div class="input">
+                        <p>Alamat Email</p>
+                        <input type="email" name="email" placeholder="Masukkan alamat email Anda" required>
+
+                        <p>Kata Sandi</p>
+                        <input type="password" name="password" placeholder="Masukkan kata sandi Anda" required>
+                    </div>
+
+                    <div class="create-account">
+                        <button type="submit" class="btn-primary">Masuk</button>
+                    </div>
+
+                </form>
+
+                <hr>
+                <p class="login">
+                    Belum punya akun?
+                    <a href="profile.html" class="link">Daftar di sini</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    const status = new URLSearchParams(window.location.search).get('status');
+
+    if (status === 'sukses') {
+        alert('Daftar berhasil! Silakan login.');
+    }
+    </script>
+</body>
+
+</html>

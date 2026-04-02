@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="signup-header">
+            <h1 class="signup-title">Mulai Kelola Keuangan Usahamu Dengan FINBISKU !</h1>
+            <p class="signup-description">
+                Kelola pemasukan, pengeluaran, dan laporan keuangan usahamu dalam satu platform.
+            </p>
+
+            <div class="section-signup">
+                <h2 class="title">Daftar Akun</h2>
+
+                <form action="proses_signup.php" method="POST">
+
+                    <div class="input">
+                        <p>Nama</p>
+                        <input type="text" name="nama" placeholder="Masukkan nama lengkap Anda" required>
+
+                        <p>Alamat Email</p>
+                        <input type="email" name="email" placeholder="Masukkan alamat email Anda" required>
+
+                        <p>Kata Sandi</p>
+                        <input type="password" name="password" placeholder="Masukkan kata sandi Anda" required>
+
+                        <p>Konfirmasi Kata Sandi</p>
+                        <input type="password" name="confirm_password" placeholder="Konfirmasi kata sandi Anda" required>
+                    </div>
+
+                    <div class="checkbox-wrapper">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="agree" required>
+                            <span>
+                                Saya menyetujui <a href="#">Syarat & Ketentuan</a> yang berlaku
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="create-account">
+                        <button type="submit" class="btn-primary">Buat Akun</button>
+                    </div>
+
+                </form>
+                
+
+                <hr>
+                <p class="login">
+                    Sudah punya akun?
+                    <a href="masuk.html" class="link">Masuk di sini</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    const status = new URLSearchParams(window.location.search).get('status');
+
+    if (status === 'password_tidak_sama') {
+        alert('Password tidak sama!');
+    } else if (status === 'email_sudah_ada') {
+        alert('Email sudah terdaftar!');
+    } else if (status === 'gagal') {
+        alert('Terjadi kesalahan, coba lagi!');
+    }
+    </script>
+</body>
+</html>

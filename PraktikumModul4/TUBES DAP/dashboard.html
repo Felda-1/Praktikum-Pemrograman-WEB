@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>💎 FINBISKU - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="bg-orange-500 text-white px-6 py-4 flex items-center justify-between shadow-lg rounded-b-2xl">
+        <div class="font-semibold text-lg">💎 FINBISKU</div>
+        <button onclick="toggleMenu()" class="md:hidden">☰</button>
+        <div id="navMenu" class="hidden md:flex gap-2">
+            <a href="index.html" class="nav">Beranda</a>
+            <a href="dashboard.html" class="nav">Dashboard</a>
+            <a href="keuangan.html" class="nav">Keuangan</a>
+            <a href="cashflow.html" class="nav">Cashflow</a>
+            <a href="smart-pricing.html" class="nav">Smart Pricing</a>
+            <a href="analisis.html" class="nav">Analisis</a>
+            <a href="literasi.html" class="nav">Literasi</a>
+            <a href="blog.html" class="nav">Blog</a>
+            <a href="profile.html" class="nav">Profil</a>
+        </div>
+    </nav>
+
+    <!-- CONTAINER -->
+    <div class="container">
+
+        <!-- SUMMARY CARDS -->
+        <div class="cards">
+            <div class="card green">
+                <h4>💰 Saldo</h4>
+                <p id="saldo">Rp 5.250.000</p>
+            </div>
+            <div class="card blue">
+                <h4>📈 Pemasukan</h4>
+                <p id="pemasukan">Rp 8.000.000</p>
+            </div>
+            <div class="card orange">
+                <h4>📉 Pengeluaran</h4>
+                <p id="pengeluaran">Rp 2.750.000</p>
+            </div>
+            <div class="card purple">
+                <h4>🧮 Laba Bersih</h4>
+                <p id="laba">Rp 5.250.000</p>
+            </div>
+        </div>
+
+        <!-- CASHFLOW -->
+        <div class="section">
+            <h2>🔄 Cashflow Realtime</h2>
+            <p>Saldo Saat Ini: <b id="saldoRealtime">Rp 5.250.000</b></p>
+            <small class="text-green-600">Status: Stabil</small>
+        </div>
+
+        <!-- TRANSAKSI TERAKHIR -->
+        <div class="section">
+            <h2>🧾 Transaksi Terakhir</h2>
+            <table class="table">
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Keterangan</th>
+                    <th>Jumlah</th>
+                </tr>
+                <tr>
+                    <td>Hari ini</td>
+                    <td>Penjualan Produk</td>
+                    <td class="text-green-600">+ Rp 150.000</td>
+                </tr>
+                <tr>
+                    <td>Kemarin</td>
+                    <td>Beli Bahan Baku</td>
+                    <td class="text-red-500">- Rp 80.000</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- INSIGHT -->
+        <div class="section">
+            <h2>🤖 Insight Pintar</h2>
+            <ul class="list-disc ml-5">
+                <li>Pengeluaran terbesar berasal dari bahan baku</li>
+                <li>Cashflow aman untuk 7 hari ke depan</li>
+                <li>Margin keuntungan bulan ini: 28%</li>
+            </ul>
+        </div>
+
+        <!-- TARGET -->
+        <div class="section">
+            <h2>🎯 Target Keuangan Bulanan</h2>
+            <progress value="60" max="100"></progress>
+            <p>Rp 6.000.000 / Rp 10.000.000</p>
+        </div>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        const links = document.querySelectorAll('.nav');
+        links.forEach(l => {
+            if (l.href.includes(location.pathname.split('/').pop())) {
+                l.classList.add('bg-orange-400', 'rounded-lg', 'px-4', 'py-2');
+            } else {
+                l.classList.add('px-4', 'py-2', 'rounded-lg', 'hover:bg-orange-400');
+            }
+        });
+
+        function toggleMenu() {
+            navMenu.classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+
+</html>
