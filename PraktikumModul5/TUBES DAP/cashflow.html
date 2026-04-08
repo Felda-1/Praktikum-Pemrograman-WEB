@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cashflow UMKM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+
+<body class="bg-gray-100">
+
+    <nav class="bg-orange-500 text-white px-6 py-4 flex items-center justify-between shadow-lg">
+        <div class="font-semibold text-lg">💎 FINBISKU</div>
+        <button onclick="toggleMenu()" class="md:hidden">☰</button>
+        <div id="navMenu" class="hidden md:flex gap-2">
+            <a href="index.html" class="nav">Beranda</a>
+            <a href="dashboard.html" class="nav">Dashboard</a>
+            <a href="keuangan.html" class="nav">Keuangan</a>
+            <a href="cashflow.html" class="nav">Cashflow</a>
+            <a href="smart-pricing.html" class="nav">Smart Pricing</a>
+            <a href="analisis.html" class="nav">Analisis</a>
+            <a href="literasi.html" class="nav">Literasi</a>
+            <a href="blog.html" class="nav">Blog</a>
+            <a href="profile.html" class="nav">Profil</a>
+        </div>
+    </nav>
+
+    <!-- SCRIPT NAV (ASLI, TIDAK DIUBAH) -->
+    <script>
+        const links = document.querySelectorAll('.nav');
+        links.forEach(l => {
+            if (l.href.includes(location.pathname.split('/').pop())) {
+                l.classList.add('bg-orange-400', 'rounded-lg', 'px-4', 'py-2');
+            } else {
+                l.classList.add('px-4', 'py-2', 'rounded-lg', 'hover:bg-orange-400');
+            }
+        });
+
+        function toggleMenu() {
+            navMenu.classList.toggle('hidden');
+        }
+    </script>
+
+    <main class="max-w-6xl mx-auto px-6 py-8">
+
+        <!-- JUDUL -->
+        <section class="mb-6">
+            <h1 class="text-2xl font-bold text-gray-800">Cashflow Usaha</h1>
+            <p class="text-gray-600">
+                Grafik dan laporan arus kas masuk dan keluar UMKM.
+            </p>
+        </section>
+
+        <!-- RINGKASAN -->
+        <section class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white shadow rounded-xl p-5">
+                <h3 class="text-gray-500">Kas Masuk</h3>
+                <p class="text-2xl font-bold text-green-600">Rp 5.000.000</p>
+            </div>
+
+            <div class="bg-white shadow rounded-xl p-5">
+                <h3 class="text-gray-500">Kas Keluar</h3>
+                <p class="text-2xl font-bold text-red-500">Rp 3.200.000</p>
+            </div>
+
+            <div class="bg-white shadow rounded-xl p-5">
+                <h3 class="text-gray-500">Saldo Akhir</h3>
+                <p class="text-2xl font-bold text-orange-500">Rp 1.800.000</p>
+            </div>
+        </section>
+
+        <!-- GRAFIK -->
+        <section class="bg-white shadow rounded-xl p-6 mb-8">
+            <h2 class="font-semibold text-gray-700 mb-4">
+                Grafik Cashflow Bulanan
+            </h2>
+
+            <canvas id="cashflowChart" height="100"></canvas>
+        </section>
+
+        <!-- TABEL -->
+        <section class="bg-white shadow rounded-xl p-6">
+            <h2 class="font-semibold text-gray-700 mb-4">Detail Arus Kas</h2>
+
+            <table class="w-full">
+                <thead class="bg-orange-100">
+                    <tr>
+                        <th class="p-3 text-left">No</th>
+                        <th class="p-3 text-left">Bulan</th>
+                        <th class="p-3 text-left">Kas Masuk</th>
+                        <th class="p-3 text-left">Kas Keluar</th>
+                        <th class="p-3 text-left">Saldo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-t">
+                        <td class="p-3">1</td>
+                        <td class="p-3">Januari</td>
+                        <td class="p-3 text-green-600">Rp 2.000.000</td>
+                        <td class="p-3 text-red-500">Rp 1.200.000</td>
+                        <td class="p-3">Rp 800.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- SCRIPT GRAFIK -->
+    <script>
+        const ctx = document.getElementById('cashflowChart');
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei'],
+                datasets: [{
+                    label: 'Kas Masuk',
+                    data: [2000000, 2500000, 3000000, 2800000, 3200000],
+                    borderColor: '#16a34a',
+                    backgroundColor: 'rgba(22,163,74,0.1)',
+                    tension: 0.4
+                }, {
+                    label: 'Kas Keluar',
+                    data: [1200000, 1500000, 1800000, 1700000, 2000000],
+                    borderColor: '#dc2626',
+                    backgroundColor: 'rgba(220,38,38,0.1)',
+                    tension: 0.4
+                }]
+            }
+        });
+    </script>
+
+</body>
+
+</html>

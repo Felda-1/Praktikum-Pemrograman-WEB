@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Pricing UMKM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+    <nav class="bg-orange-500 text-white px-6 py-4 flex items-center justify-between shadow-lg">
+        <div class="font-semibold text-lg">💎 FINBISKU</div>
+        <button onclick="toggleMenu()" class="md:hidden">☰</button>
+        <div id="navMenu" class="hidden md:flex gap-2">
+            <a href="index.html" class="nav">Beranda</a>
+            <a href="dashboard.html" class="nav">Dashboard</a>
+            <a href=".html" class="nav">Keuangan</a>
+            <a href="cashflow.html" class="nav">Cashflow</a>
+            <a href="smart-pricing.html" class="nav">Smart Pricing</a>
+            <a href="analisis.html" class="nav">Analisis</a>
+            <a href="literasi.html" class="nav">Literasi</a>
+            <a href="blog.html" class="nav">Blog</a>
+            <a href="profile.html" class="nav">Profil</a>
+        </div>
+    </nav>
+
+    <script>
+        const links = document.querySelectorAll('.nav');
+        links.forEach(l => {
+            if (l.href.includes(location.pathname.split('/').pop())) {
+                l.classList.add('bg-orange-400', 'rounded-lg', 'px-4', 'py-2');
+            } else {
+                l.classList.add('px-4', 'py-2', 'rounded-lg', 'hover:bg-orange-400');
+            }
+        });
+
+        function toggleMenu() {
+            navMenu.classList.toggle('hidden');
+        }
+    </script>
+
+    <body class="bg-gray-100">
+
+        <main class="max-w-4xl mx-auto px-6 py-8">
+
+            <!-- JUDUL -->
+            <section class="mb-6">
+                <h1 class="text-2xl font-bold text-gray-800">Smart Pricing</h1>
+                <p class="text-gray-600">
+                    Tentukan harga jual produk berdasarkan biaya dan target keuntungan usaha.
+                </p>
+            </section>
+
+            <!-- FORM -->
+            <section class="bg-white shadow rounded-xl p-6 mb-8">
+                <h2 class="font-semibold text-gray-700 mb-4">Perhitungan Harga Jual</h2>
+
+                <div class="grid md:grid-cols-3 gap-4">
+                    <input id="biayaProduksi" type="number" class="border rounded-lg px-4 py-2" placeholder="Biaya Produksi / Unit (Rp)">
+
+                    <input id="biayaOperasional" type="number" class="border rounded-lg px-4 py-2" placeholder="Biaya Operasional / Unit (Rp)">
+
+                    <input id="targetProfit" type="number" class="border rounded-lg px-4 py-2" placeholder="Target Keuntungan (%)">
+                </div>
+
+                <button onclick="hitungHarga()" class="mt-4 bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600">
+                Hitung Harga Jual
+            </button>
+            </section>
+
+            <!-- HASIL -->
+            <section class="bg-white shadow rounded-xl p-6">
+                <h2 class="font-semibold text-gray-700 mb-4">Hasil Perhitungan</h2>
+
+                <div class="grid md:grid-cols-3 gap-4 text-center">
+                    <div>
+                        <p class="text-gray-500">Total Biaya</p>
+                        <p id="totalBiaya" class="font-bold text-lg">Rp 0</p>
+                    </div>
+
+                    <div>
+                        <p class="text-gray-500">Harga Jual</p>
+                        <p id="hargaJual" class="font-bold text-lg text-green-600">Rp 0</p>
+                    </div>
+
+                    <div>
+                        <p class="text-gray-500">Keuntungan / Unit</p>
+                        <p id="keuntungan" class="font-bold text-lg text-orange-500">Rp 0</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- SCRIPT -->
+        <script>
+            function hitungHarga() {
+                const produksi = parseFloat(document.getElementById('biayaProduksi').value) || 0;
+                const operasional = parseFloat(document.getElementById('biayaOperasional').value) || 0;
+                const target = parseFloat(document.getElementById('targetProfit').value) || 0;
+
+                const totalBiaya = produksi + operasional;
+                const keuntungan = totalBiaya * (target / 100);
+                const hargaJual = totalBiaya + keuntungan;
+
+                document.getElementById('totalBiaya').innerText =
+                    'Rp ' + totalBiaya.toLocaleString('id-ID');
+
+                document.getElementById('keuntungan').innerText =
+                    'Rp ' + keuntungan.toLocaleString('id-ID');
+
+                document.getElementById('hargaJual').innerText =
+                    'Rp ' + hargaJual.toLocaleString('id-ID');
+            }
+        </script>
+
+    </body>
+
+</html>
