@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Analisis Keuangan UMKM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+    <!-- NAVBAR (ASLI, TIDAK DIUBAH) -->
+    <nav class="bg-orange-500 text-white px-6 py-4 flex items-center justify-between shadow-lg">
+        <div class="font-semibold text-lg">💎 FINBISKU</div>
+        <button onclick="toggleMenu()" class="md:hidden">☰</button>
+        <div id="navMenu" class="hidden md:flex gap-2">
+            <a href="index.html" class="nav">Beranda</a>
+            <a href="dashboard.html" class="nav">Dashboard</a>
+            <a href=".html" class="nav">Keuangan</a>
+            <a href="cashflow.html" class="nav">Cashflow</a>
+            <a href="smart-pricing.html" class="nav">Smart Pricing</a>
+            <a href="analisis.html" class="nav">Analisis</a>
+            <a href="literasi.html" class="nav">Literasi</a>
+            <a href="blog.html" class="nav">Blog</a>
+            <a href="profile.html" class="nav">Profil</a>
+        </div>
+    </nav>
+
+    <!-- SCRIPT NAV (ASLI, TIDAK DIUBAH) -->
+    <script>
+        const links = document.querySelectorAll('.nav');
+        links.forEach(l => {
+            if (l.href.includes(location.pathname.split('/').pop())) {
+                l.classList.add('bg-orange-400', 'rounded-lg', 'px-4', 'py-2');
+            } else {
+                l.classList.add('px-4', 'py-2', 'rounded-lg', 'hover:bg-orange-400');
+            }
+        });
+
+        function toggleMenu() {
+            navMenu.classList.toggle('hidden');
+        }
+    </script>
+
+    <body class="bg-gray-100">
+
+        <main class="max-w-6xl mx-auto px-6 py-8">
+
+            <!-- JUDUL -->
+            <section class="mb-6">
+                <h1 class="text-2xl font-bold text-gray-800">Analisis Keuangan</h1>
+                <p class="text-gray-600">
+                    Evaluasi kinerja keuangan usaha berdasarkan pendapatan dan pengeluaran.
+                </p>
+            </section>
+
+            <!-- INDIKATOR -->
+            <section class="grid md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white shadow rounded-xl p-5">
+                    <h3 class="text-gray-500">Pendapatan</h3>
+                    <p class="text-xl font-bold text-green-600">Rp 8.000.000</p>
+                </div>
+
+                <div class="bg-white shadow rounded-xl p-5">
+                    <h3 class="text-gray-500">Pengeluaran</h3>
+                    <p class="text-xl font-bold text-red-500">Rp 5.500.000</p>
+                </div>
+
+                <div class="bg-white shadow rounded-xl p-5">
+                    <h3 class="text-gray-500">Laba Bersih</h3>
+                    <p class="text-xl font-bold text-orange-500">Rp 2.500.000</p>
+                </div>
+
+                <div class="bg-white shadow rounded-xl p-5">
+                    <h3 class="text-gray-500">Margin (%)</h3>
+                    <p class="text-xl font-bold text-blue-600">31%</p>
+                </div>
+            </section>
+
+            <!-- GRAFIK -->
+            <section class="bg-white shadow rounded-xl p-6 mb-8">
+                <h2 class="font-semibold text-gray-700 mb-4">
+                    Perbandingan Pendapatan & Pengeluaran
+                </h2>
+                <canvas id="analysisChart" height="100"></canvas>
+            </section>
+
+            <!-- ANALISIS -->
+            <section class="bg-white shadow rounded-xl p-6">
+                <h2 class="font-semibold text-gray-700 mb-3">Hasil Analisis</h2>
+                <p class="text-gray-600">
+                    Berdasarkan data keuangan, usaha menunjukkan kondisi
+                    <span class="font-semibold text-green-600">menguntungkan</span>. Pendapatan lebih besar dibandingkan pengeluaran, dengan margin keuntungan yang cukup baik. Disarankan untuk tetap mengontrol biaya operasional agar laba tetap stabil.
+                </p>
+            </section>
+
+        </main>
+
+        <!-- SCRIPT GRAFIK -->
+        <script>
+            const ctx = document.getElementById('analysisChart');
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Pendapatan', 'Pengeluaran'],
+                    datasets: [{
+                        label: 'Jumlah (Rp)',
+                        data: [8000000, 5500000],
+                        backgroundColor: ['#16a34a', '#dc2626']
+                    }]
+                }
+            });
+        </script>
+
+    </body>
+
+</html>

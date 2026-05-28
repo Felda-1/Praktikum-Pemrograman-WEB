@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>💎 FINBISKU - Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <nav class="bg-orange-500 text-white px-6 py-4 flex items-center justify-between shadow-lg">
+        <div class="font-semibold text-lg">💎 FINBISKU</div>
+        <button onclick="toggleMenu()" class="md:hidden">☰</button>
+        <div id="navMenu" class="hidden md:flex gap-2">
+            <a href="index.html" class="nav">Beranda</a>
+            <a href="dashboard.html" class="nav">Dashboard</a>
+            <a href="keuangan.html" class="nav">Keuangan</a>
+            <a href="cashflow.html" class="nav">Cashflow</a>
+            <a href="smart-pricing.html" class="nav">Smart Pricing</a>
+            <a href="analisis.html" class="nav">Analisis</a>
+            <a href="literasi.html" class="nav">Literasi</a>
+            <a href="blog.html" class="nav">Blog</a>
+            <a href="profile.html" class="nav">Profil</a>
+        </div>
+    </nav>
+
+
+    <script>
+        const links = document.querySelectorAll('.nav');
+        links.forEach(l => {
+            if (l.href.includes(location.pathname.split('/').pop())) {
+                l.classList.add('bg-orange-400', 'rounded-lg', 'px-4', 'py-2');
+            } else {
+                l.classList.add('px-4', 'py-2', 'rounded-lg', 'hover:bg-orange-400');
+            }
+        });
+
+
+        function toggleMenu() {
+            navMenu.classList.toggle('hidden');
+        }
+    </script>
+
+    <!-- HERO -->
+    <section class="hero">
+        <img src="DashboardPemerintah.jpeg" alt="Dashboard Pemerintah" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>Pusat Informasi Dan Kolaborasi UMKM</h2>
+            <p>
+                Sumber informasi resmi pemerintah daerah terkait kebijakan UMKM, jadwal sosialisasi dan pelatihan,
+                serta peta kegiatan bazar yang dapat diakses oleh seluruh pelaku UMKM.
+            </p>
+        </div>
+    </section>
+
+    <!-- DESKRIPSI -->
+    <section class="blog-section">
+        <div class="container">
+            <h1 class="title">Blogs Finbisku</h1>
+
+            <p class="paragraph">
+                Halaman ini dirancang sebagai ruang kolaborasi antara pemerintah dan pelaku UMKM untuk tumbuh bersama. 
+                Berbagai informasi penting seperti peta bazar UMKM, kebijakan terbaru, serta jadwal pelatihan dan sosialisasi disajikan secara terbuka dan mudah diakses, agar pelaku usaha tidak tertinggal informasi.
+                Mari manfaatkan teknologi digital sebagai langkah bersama menuju ekosistem ekonomi lokal yang kuat, inklusif, dan berkelanjutan dalam mendukung terwujudnya Smart City.
+            </p>
+
+            <p class="paragraph">
+                Terima kasih telah mengunjungi blog Finbisku!
+            </p>
+        </div>
+    </section>
+
+    <!-- MAPS SECTION -->
+    <section class="maps-section">
+        <div class="container">
+            <img src="Maps.png" alt="Maps UMKM" class="maps-image">
+        </div>
+    </section>
+
+    <!-- SEARCH & EVENT HEADER -->
+    <section class="search-section">
+        <div class="search-box">
+            <div class="search-icon">
+                <!-- SVG SEARCH ICON -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" 
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+            </div>
+
+            <input type="text" placeholder="Cari Lokasi" class="search-input">
+
+            <select class="sort-select">
+                <option>Sort by Date</option>
+                <option>Terdekat</option>
+                <option>Terlama</option>
+            </select>
+        </div>
+
+        <div class="event-header">
+            <p>Upcoming Events</p>
+        </div>
+    </section>
+
+    <section class="events-section">
+        <div class="events-container">
+
+            <!-- EVENT CARD -->
+            <div class="event-card">
+                <div class="event-image-wrapper">
+                    <img src="Gambar6.jpeg" alt="event1" class="event-image">
+                    <p class="event-date">6 Jan</p>
+                </div>
+
+                <div class="event-content">
+                    <h2 class="event-title">Pelatihan Manajemen Keuangan</h2>
+                    <p class="event-description">
+                        Tingkatkan kemampuan mengelola keuangan usaha Anda dengan mengikuti pelatihan manajemen keuangan.
+                    </p>
+                    <a href="https://maps.app.goo.gl/ajSnk1Ma993Q7drJA" class="event-location">
+                        Kantor Desa Dayeuhkolot
+                    </a>
+                </div>
+            </div>
+
+            <!-- EVENT CARD -->
+            <div class="event-card">
+                <div class="event-image-wrapper">
+                    <img src="Gambar7.jpeg" alt="event2" class="event-image">
+                    <p class="event-date">7 Jan</p>
+                </div>
+
+                <div class="event-content">
+                    <h2 class="event-title">Sosialisasi Program Bantuan Modal</h2>
+                    <p class="event-description">
+                        Dapatkan informasi lengkap mengenai program bantuan modal untuk UMKM dari pemerintah daerah.
+                    </p>
+                    <a href="https://maps.app.goo.gl/ynfpFmKpsA4XRBU57" class="event-location">
+                        Kantor Dinas UMKM Kota Bandung
+                    </a>
+                </div>
+            </div>
+
+            <!-- EVENT CARD -->
+            <div class="event-card">
+                <div class="event-image-wrapper">
+                    <img src="Gambar8.jpeg" alt="event3" class="event-image">
+                    <p class="event-date">8 Jan</p>
+                </div>
+
+                <div class="event-content">
+                    <h2 class="event-title">Bazar UMKM Kreatif 2026</h2>
+                    <p class="event-description">
+                        Jelajahi berbagai produk kreatif dari pelaku UMKM lokal dalam bazar tahunan.
+                    </p>
+                    <a href="https://maps.app.goo.gl/BiWgDzgm4gAuVXNUA" class="event-location">
+                        Dinas Koperasi dan UMKM Jawa Barat
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- KEBIJAKAN -->
+    <section class="policy-header">
+        <p>Kebijakan Kementerian Usaha Mikro, Kecil, dan Menengah</p>
+    </section>
+
+    <section class="policy-section">
+        <div class="policy-list">
+
+            <!-- CARD -->
+            <div class="policy-card">
+                <img src="Kebijakan-pemerintah-UMKM-2025.jpg" alt="Kebijakan UMKM">
+                <a href="https://umkm.go.id/arah-kebijakan" class="policy-link">
+                    Arah Kebijakan UMKM Tahun 2025
+                </a>
+            </div>
+
+            <!-- CARD -->
+            <div class="policy-card">
+                <img src="Kebijakan-pemerintah-UMKM-2025.jpg" alt="Kebijakan UMKM">
+                <a href="https://jdih.umkm.go.id/doc/detail/dFxTlhIoSXO-fAT7f5hA-4XniqoRlyibEyXlt321Wq-Ro4Co31Zwh0Z3eAa-wPh2/peraturan/peraturan-menteri-nomor-5-tahun-2025-tentang-jaringan-dokumentasi-dan-informasi-hukum-di-lingkungan-kementerian-usaha-mikro-kecil-dan-menengah" class="policy-link">
+                    Peraturan Menteri Nomor 5 Tahun 2025
+                </a>
+            </div>
+
+            <!-- CARD -->
+            <div class="policy-card">
+                <img src="Kebijakan-pemerintah-UMKM-2025.jpg" alt="Kebijakan UMKM">
+                <a href="https://jdih.umkm.go.id/doc/detail/AMBZB7vgohlHDIVN50jLkYJi36oJIvZqjkwuJ4mwoxARenIO4Gh-TmAvFup4pgR1/peraturan/" class="policy-link">
+                    Keputusan Menteri Nomor 1 Tahun 2024
+                </a>
+            </div>
+
+            <!-- CARD -->
+            <div class="policy-card">
+                <img src="Kebijakan-pemerintah-UMKM-2025.jpg" alt="Kebijakan UMKM">
+                <a href="https://jdih.umkm.go.id/doc/detail/BVT4MYYdiHxHs4vEJym6-mNPMwb_h74rKgHJDCpXZrg_Mds7aiuSTU8e2jW8W2DJ/peraturan/" class="policy-link">
+                    Rencana Strategis UMKM
+                </a>
+            </div>
+
+            <!-- CARD -->
+            <div class="policy-card">
+                <img src="Kebijakan-pemerintah-UMKM-2025.jpg" alt="Kebijakan UMKM">
+                <a href="https://jdih.umkm.go.id/doc/detail/MsI0-WT-1fUlmOOC1qjbiVIP8HyvhLKcH62ovv6mEavU8VCSAaDbJ2FopXblrsX2/peraturan/" class="policy-link">
+                    Juknis Pengembangan Usaha
+                </a>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>

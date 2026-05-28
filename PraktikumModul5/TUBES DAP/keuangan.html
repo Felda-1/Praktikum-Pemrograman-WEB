@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>💎 FINBISKU - Keuangan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR (ASLI, TIDAK DIUBAH) -->
+    <nav class="bg-orange-500 text-white px-6 py-4 flex items-center justify-between shadow-lg">
+        <div class="font-semibold text-lg">💎 FINBISKU</div>
+        <button onclick="toggleMenu()" class="md:hidden">☰</button>
+        <div id="navMenu" class="hidden md:flex gap-2">
+            <a href="index.html" class="nav">Beranda</a>
+            <a href="dashboard.html" class="nav">Dashboard</a>
+            <a href=".html" class="nav">Keuangan</a>
+            <a href="cashflow.html" class="nav">Cashflow</a>
+            <a href="smart-pricing.html" class="nav">Smart Pricing</a>
+            <a href="analisis.html" class="nav">Analisis</a>
+            <a href="literasi.html" class="nav">Literasi</a>
+            <a href="blog.html" class="nav">Blog</a>
+            <a href="profile.html" class="nav">Profil</a>
+        </div>
+    </nav>
+
+    <!-- SCRIPT NAV (ASLI, TIDAK DIUBAH) -->
+    <script>
+        const links = document.querySelectorAll('.nav');
+        links.forEach(l => {
+            if (l.href.includes(location.pathname.split('/').pop())) {
+                l.classList.add('bg-orange-400', 'rounded-lg', 'px-4', 'py-2');
+            } else {
+                l.classList.add('px-4', 'py-2', 'rounded-lg', 'hover:bg-orange-400');
+            }
+        });
+
+        function toggleMenu() {
+            navMenu.classList.toggle('hidden');
+        }
+    </script>
+
+    <!-- CONTAINER (ASLI, TIDAK DIHAPUS) -->
+    <div class="container">
+
+        <!-- TAMBAHAN HEADER VISUAL (TIDAK MENGGANTI ISI) -->
+        <div class="section-header">
+            <h1>📒 Pencatatan Keuangan</h1>
+            <p>Kelola pemasukan dan pengeluaran usaha Anda dengan mudah.</p>
+        </div>
+
+        <!-- SECTION ASLI -->
+        <div class="section">
+            <h2>Pencatatan Keuangan</h2>
+
+            <!-- FORM ASLI (TIDAK DIUBAH) -->
+            <form onsubmit="tambahData(event)" class="finance-form">
+                <div>
+                    <input id="ket" placeholder="Keterangan" required>
+                </div>
+
+                <div>
+                    <select id="jenis">
+                        <option value="Masuk">Masuk</option>
+                        <option value="Keluar">Keluar</option>
+                    </select>
+                </div>
+
+                <div>
+                    <input id="nominal" type="number" placeholder="Nominal" required>
+                </div>
+
+                <div class="form-action">
+                    <button>Simpan</button>
+                </div>
+            </form>
+
+            <!-- TABEL ASLI (TIDAK DIUBAH) -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Keterangan</th>
+                        <th>Jenis</th>
+                        <th>Nominal</th>
+                    </tr>
+                </thead>
+                <tbody id="list">
+                    <tr>
+                        <td colspan="4" style="text-align:center;color:#999">
+                            Belum ada data
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- SCRIPT ASLI -->
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
