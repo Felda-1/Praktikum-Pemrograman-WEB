@@ -1,0 +1,59 @@
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-primary: #0d0d0f;
+  --bg-card: #16161a;
+  --bg-elevated: #1e1e24;
+  --accent: #f0c040;
+  --accent-dim: rgba(240, 192, 64, 0.12);
+  --accent-hover: #f7d060;
+  --text-primary: #f0ede8;
+  --text-secondary: #8a8799;
+  --text-muted: #4a4858;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-accent: rgba(240, 192, 64, 0.3);
+  --danger: #e05c5c;
+  --danger-dim: rgba(224, 92, 92, 0.1);
+  --success: #5ce0a0;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-accent: 0 0 20px rgba(240, 192, 64, 0.15);
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ===== BACKGROUND TEXTURE ===== */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(ellipse 60% 50% at 20% 10%, rgba(240, 192, 64, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 80% 80%, rgba(92, 224, 160, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
